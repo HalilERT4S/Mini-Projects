@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 450px;
+            border: 1px solid white;
+            background-image: url("https://galeri12.uludagsozluk.com/501/seksi-erkek-denince-akla-gelen-profil_692277.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /*Normalde .card-content te bir değişim olacağı zaman 1s delay olduktan sonra gerçekleşmesini istedik .card a hover olduğunda ise delay ını ortadan kaldırıyoruz bu sayede .card hover olduğu zaman alttan hemen siyah kutu gelecek hover özelliği bittikten 1s sonra sında eski haline dönecek*/
+        .card-content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.301);
+            transform: translateY(100%);
+            transition: all .6s;
+            transition-delay: 1s;
+        }
+
+        .social-media {
+            width: calc(100% / 3);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 15px;
+            transform: translateY(100%);
+            transition: all .8s;
+            transition-delay: calc(var(--i) * .2s);
+        }
+
+        .social-media i {
+            color: white;
+            font-size: xx-large;
+        }
+
+        .card:hover .card-content {
+            transform: translateY(0);
+            transition-delay: 0s;
+        }
+
+        .card:hover .social-media {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-content">
+            <div class="social-media" style="--i:1;"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-media" style="--i:2;"><i class="fab fa-instagram"></i></div>
+            <div class="social-media" style="--i:3;"><i class="fab fa-twitter"></i></div>
+        </div>
+    </div>
+    <script>
+        let content = document.querySelector(".card-content");
+        for (let i = 0; i < content.childNodes.length; i++) {
+            if (content.childNodes[i].nodeType === 3) {
+                content.removeChild(content.childNodes[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

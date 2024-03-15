@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            cursor: default;
+        }
+
+        *::selection {
+            background-color: transparent;
+            color: transparent;
+        }
+
+        .navbar {
+            line-height: 100px;
+            width: 500px;
+            height: 100px;
+            margin: 300px auto;
+            border-radius: 25px;
+            background-color: white;
+            box-shadow: 0 0 10px 2px black;
+        }
+
+        ul li {
+            z-index: 2;
+            position: relative;
+            margin: 10px;
+            border-radius: 50%;
+            text-align: center;
+            display: inline-block;
+            height: 70px;
+            line-height: 64px;
+            width: 70px;
+        }
+
+        ul li div {
+            width: 70px;
+            height: 70px;
+            line-height: 64px;
+            z-index: 3;
+            position: relative;
+            border: 6px solid rgba(73, 73, 73, 0);
+            top: 0;
+            border-radius: 50%;
+            transition: all .5s ease;
+        }
+
+        ul li:hover div {
+            border: 6px solid rgba(73, 73, 73, 1);
+            background-color: rgb(47, 255, 75);
+            top: -50px;
+        }
+
+        body {
+            background-color: rgb(73, 73, 73);
+        }
+
+        ul {
+            position: relative;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        ul li a {
+            font-size: x-large;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="navbar-list">
+            <li class="navbar-item">
+                <div><a href="#"><i class="far fa-address-book"></i></a></div>
+            </li>
+            <li class="navbar-item">
+                <div><a href="#"><i class="far fa-address-card"></i></a></div>
+            </li>
+            <li class="navbar-item">
+                <div><a href="#"><i class="far fa-paper-plane"></i></a></div>
+            </li>
+            <li class="navbar-item">
+                <div><a href="#"><i class="far fa-comments"></i></a></div>
+            </li>
+            <li class="navbar-item">
+                <div><a href="#"><i class="far fa-envelope"></i></a></div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

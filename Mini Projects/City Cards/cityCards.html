@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background-color: antiquewhite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            padding: 5rem;
+            background: linear-gradient(45deg, orange, purple);
+        }
+
+        .container:hover .card {
+            filter: blur(5px);
+            transform: scale(.9);
+            opacity: .6;
+        }
+
+        .container .card {
+            display: inline-block;
+            border: 1px solid white;
+            margin: 2rem;
+            padding: 0rem 2rem 1rem;
+            /*(100% - 4(tek satırda olmasını istediğimiz card sayısı) * (2*2)rem(cardların sağındaki ve solundaki margin boşluğu)) / 4(tek satırda olmasını istediğimiz card sayısı)*/
+            width: calc((100% - 4 * 4rem) / 4);
+            border-radius: 1.6rem;
+            transition: all 1s;
+        }
+
+        .container .card:hover {
+            filter: blur(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .container .card .card-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 20rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            clip-path: circle(60% at center 0);
+        }
+
+        .container .card:nth-of-type(1) .card-img {
+            background-image: url("https://media.istockphoto.com/photos/istanbul-turkey-view-on-golden-horn-bay-from-galata-tower-picture-id495147329?k=20&m=495147329&s=612x612&w=0&h=rIcw6VJFPSuFpPCH_8sdKuA-3YUdFnpAB6l60Mgrcwg=");
+        }
+
+        .container .card:nth-of-type(2) .card-img {
+            background-image: url("https://media.istockphoto.com/photos/havadan-ankara-kalesi-2-picture-id504129131?k=20&m=504129131&s=612x612&w=0&h=IbNw27Lg3t7VfYBHOqLHOYPTeHbsKtnYZe8hDembMZw=");
+        }
+
+        .container .card:nth-of-type(3) .card-img {
+            background-image: url("https://www.yerbilgisi.com/wp-content/uploads/2015/11/bursa-turu-4-2048x1365.jpg");
+        }
+
+        .container .card:nth-of-type(4) .card-img {
+            background-image: url("https://ebrdgreencities.com/assets/Uploads/180881cd07/IZMIR.png");
+        }
+
+        .container .card:nth-of-type(5) .card-img {
+            background-image: url("https://im.haberturk.com/2021/06/22/ver1624361235/3111775_810x458.jpg");
+        }
+
+        .container .card:nth-of-type(6) .card-img {
+            background-image: url("https://www.gaziantep.bel.tr/uploads/2020/05/slider01_w1920_op.webp");
+        }
+
+        .container .card:nth-of-type(7) .card-img {
+            background-image: url("https://staticb.yolcu360.com/blog/wp-content/uploads/2019/02/14165532/adiyaman-sehri.jpg");
+        }
+
+        .container .card:nth-of-type(8) .card-img {
+            background-image: url("https://www.afyon.bel.tr/upload/tr/resim/icerikyonetimi/afyonkarahisar-iklim_23102020142721_1024_768_id_6.jpg");
+        }
+
+        .container .card .card-img h2 {
+            color: aliceblue;
+            font-size: 3rem;
+        }
+
+        .container .card .card-text {
+            width: 100%;
+            padding: 2rem;
+            font-size: 2rem;
+        }
+
+        .container .card .card-text p {
+            text-indent: .6rem;
+            text-align: justify;
+            padding: 2rem;
+            color: rgb(233, 233, 233);
+            line-height: 20px;
+        }
+
+        .container .card .card-text a {
+            text-decoration: none;
+            font-size: 2.1rem;
+            font-weight: 400;
+            color: beige;
+            display: block;
+            text-align: center;
+            padding: 1rem 3rem;
+            border: 1px solid white;
+            margin: 1rem auto;
+            width: 50%;
+            border-radius: 2rem;
+            transition: all .6s;
+        }
+
+        .container .card .card-text a:hover {
+            background-color: white;
+            color: coral;
+        }
+
+        @media (max-width: 1600px) {
+            .container .card {
+                width: calc((100% - 3 * 4rem) / 3);
+            }
+        }
+
+        @media (max-width: 1250px) {
+            .container .card {
+                width: calc((100% - 2 * 4rem) / 2);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container .card {
+                width: calc((100% - 1 * 4rem) / 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-img">
+                <h2>İSTANBUL</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>ANKARA</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>BURSA</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>İZMİR</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>TRABZON</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>GAZİANTEP</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="#">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>ADIYAMAN</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <h2>AFYONKARAHİSAR</h2>
+            </div>
+            <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos suscipit obcaecati dolores
+                    minima dolore, excepturi perferendis? Voluptas dicta quaerat possimus vel hic eaque culpa, eius eum
+                    exercitationem sapiente. Delectus!</p>
+                <a href="">Detay</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let container = document.querySelector(".container");
+        for (let i = 0; i < container.childNodes.length; i++) {
+            if (container.childNodes[i].nodeType === 3) {
+                container.removeChild(container.childNodes[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

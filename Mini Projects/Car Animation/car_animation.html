@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100vh;
+            font-size: 10px;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cerceve {
+            box-shadow: 10px 10px 20px rgba(9, 255, 0, 0.4), 10px -10px 20px rgba(0, 195, 255, 0.4);
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+            border: 1px solid black;
+            width: 80rem;
+            height: 40rem;
+            margin: 5rem auto;
+        }
+
+        #cerceve .yol {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-image: url(./images/yol.jpg);
+            background-size: contain;
+            animation: yol 2s linear infinite;
+        }
+
+        #cerceve .yol .araba {
+            width: 22.2rem;
+            height: 8rem;
+            position: absolute;
+            left: 55rem;
+            top: 26rem;
+            background-image: url(./images/araba.png);
+            background-size: 22.2rem 8rem;
+        }
+
+        #cerceve .yol .araba .tekerlek {
+            position: absolute;
+            top: 4.8rem;
+            width: 3rem;
+            height: 3rem;
+            background-image: url(./images/tekerlek.png);
+            background-size: 3rem 3rem;
+            animation-name: tekerlek;
+            animation-duration: .5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #cerceve .yol .araba .tekerlek:first-child {
+            left: 2.6rem;
+        }
+
+        #cerceve .yol .araba .tekerlek:last-child {
+            left: 16.5rem;
+        }
+
+        #cerceve:hover .yol {
+            animation-play-state: paused;
+        }
+
+        #cerceve:hover .araba {
+            animation-name: araba;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes araba {
+            from {}
+
+            to {
+                left: -25rem;
+            }
+        }
+
+        @keyframes yol {
+            from {}
+
+            to {
+                background-position: 80rem;
+            }
+        }
+
+        @keyframes tekerlek {
+            from {}
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cerceve">
+        <div class="yol">
+            <div class="araba">
+                <div class="tekerlek"></div>
+                <div class="tekerlek"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

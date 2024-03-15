@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        div#cerceve {
+            border: 1px solid black;
+            position: relative;
+            width: 30rem;
+            height: 40rem;
+            margin: 10rem auto;
+            padding: 0.6rem;
+            overflow: hidden;
+        }
+
+        div#cerceve::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            height: 55rem;
+            width: 55rem;
+            background-image: conic-gradient(rgb(3, 238, 3), rgb(0, 118, 173), rgb(153, 0, 241), red, rgb(255, 136, 0), yellow);
+            animation: donme 1s linear infinite;
+        }
+
+        @keyframes donme {
+            to {}
+
+            from {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        div#cerceve-ici {
+            background-color: black;
+            background-image:
+                url("https://st3.depositphotos.com/6903990/32464/i/450/depositphotos_324644168-stock-photo-beautiful-model-girl-blond-hair.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cerceve">
+        <div id="cerceve-ici"></div>
+    </div>
+</body>
+
+</html>

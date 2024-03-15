@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            height: 100vh;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #todolist-kutusu {
+            width: 50rem;
+            height: 55rem;
+            background-color: white;
+            cursor: default;
+        }
+
+        #baslik {
+            width: 100%;
+            height: 7rem;
+            line-height: 7rem;
+            padding-left: 2rem;
+            background-color: rgb(0, 195, 255);
+            color: white;
+            font-weight: 900;
+            font-size: xx-large;
+        }
+
+        #gorevler .gorev {
+            width: 46rem;
+            height: 8rem;
+            line-height: 8rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .3);
+            font-weight: 900;
+            font-size: x-large;
+        }
+
+        .gorev:last-child {
+            border-bottom: none;
+        }
+
+        .gorev-isim {
+            display: inline-block;
+            width: 42rem;
+            transition: all .5s ease;
+        }
+
+        .gorev-onay {
+            display: inline-block;
+            width: 3rem;
+            text-align: center;
+            height: 3rem;
+            line-height: 3rem;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, .3);
+            color: rgba(0, 0, 0, .3);
+            transition: all .5s ease;
+        }
+
+        .gorev-onay:hover {
+            cursor: pointer;
+        }
+
+        *::selection {
+            background-color: transparent;
+        }
+
+        .gorev input[type="checkbox"] {
+            display: none;
+        }
+
+        .gorev input[type="checkbox"]:checked+.gorev-isim {
+            text-decoration: line-through;
+            color: rgba(0, 0, 0, .4);
+        }
+
+        .gorev input[type="checkbox"]:checked+.gorev-isim+.gorev-onay {
+            background-color: rgb(0, 195, 255);
+            border: 1px solid rgb(0, 195, 255);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todolist-kutusu">
+        <div id="baslik">Pure CSS To Do List </div>
+        <div id="gorevler">
+            <div class="gorev">
+                <input type="checkbox" id="birincigorev">
+                <p class="gorev-isim">Eat</p>
+                <label class="gorev-onay" for="birincigorev">✓</label>
+            </div>
+            <div class="gorev">
+                <input type="checkbox" id="ikincigorev">
+                <p class="gorev-isim">Drink</p>
+                <label class="gorev-onay" for="ikincigorev">✓</label>
+            </div>
+            <div class="gorev">
+                <input type="checkbox" id="ucuncugorev">
+                <p class="gorev-isim">Work</p>
+                <label class="gorev-onay" for="ucuncugorev">✓</label>
+            </div>
+            <div class="gorev">
+                <input type="checkbox" id="dorduncugorev">
+                <p class="gorev-isim">Sleep</p>
+                <label class="gorev-onay" for="dorduncugorev">✓</label>
+            </div>
+            <div class="gorev">
+                <input type="checkbox" id="besincigorev">
+                <p class="gorev-isim">Bath</p>
+                <label class="gorev-onay" for="besincigorev">✓</label>
+            </div>
+            <div class="gorev">
+                <input type="checkbox" id="altincigorev">
+                <p class="gorev-isim">Exercise</p>
+                <label class="gorev-onay" for="altincigorev">✓</label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

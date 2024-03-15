@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100vh;
+            font-size: 10px;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(44, 44, 44);
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            position: relative;
+            width: 30rem;
+            height: 15rem;
+            border-radius: 15rem;
+            margin: 20rem auto;
+            background-color: rgb(34, 34, 34);
+            box-shadow: 0 0 15px 3px black;
+        }
+
+        #buyukdaire {
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid black;
+            top: 1rem;
+            left: 1rem;
+            height: 13rem;
+            width: 13rem;
+            border-radius: 13rem;
+            background: linear-gradient(to top, rgb(53, 53, 53) 50%, rgb(41, 41, 41) 96%, rgb(73, 73, 73));
+            box-shadow: 0 0 10px rgb(0, 0, 0, .7);
+            transition: all .5s ease;
+        }
+
+        #kucukdaire {
+            position: absolute;
+            left: 5.5rem;
+            top: 5.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 2rem;
+            background-color: red;
+            box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 100px 10px red;
+            transition: all .5s ease;
+        }
+
+        input[type="checkbox"]:checked+label #buyukdaire {
+            left: 16rem;
+        }
+
+        input[type="checkbox"]:checked+label #kucukdaire {
+            background-color: rgb(5, 233, 5);
+            box-shadow: 0 0 10px rgb(5, 233, 5), 0 0 20px rgb(5, 233, 5),
+                0 0 30px rgb(5, 233, 5), 0 0 100px 10px rgb(5, 233, 5);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="onay">
+    <label for="onay">
+        <div id="buyukdaire">
+            <div id="kucukdaire"></div>
+        </div>
+    </label>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        h2 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 64px;
+            cursor: default;
+        }
+
+        #fener {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(circle at var(--x) var(--y), transparent 10%, rgba(0, 0, 0, 0.5) 12%, black 12%);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Her karanlık gecenİn bİr sabahı vardır</h2>
+    <div id="fener"></div>
+    <script>
+        let fener = document.documentElement;
+        fener.addEventListener("mousemove", e => {
+            fener.style.setProperty("--x", e.clientX + "px");
+            fener.style.setProperty("--y", e.clientY + "px");
+        })
+    </script>
+</body>
+
+</html>

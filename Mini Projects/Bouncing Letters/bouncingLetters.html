@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html {
+            height: 100vh;
+            font-size: 10px;
+        }
+
+        body {
+            background-color: black;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            text-align: center;
+            letter-spacing: 1.5rem;
+            line-height: 10rem;
+            font-size: 8rem;
+            font-weight: 900;
+        }
+
+        .bounceLetter {
+            display: inline-block;
+            color: white;
+            transition: all .5s ease;
+        }
+
+        .bounceLetter:hover {
+            color: rgb(0, 217, 255);
+            animation: gelatine .8s;
+        }
+
+        @keyframes gelatine {
+
+            from,
+            to {
+                transform: scale(1, 1);
+            }
+
+            25% {
+                transform: scale(1, .6);
+            }
+
+            50% {
+                transform: scale(1, 1.15);
+            }
+
+            75% {
+                transform: scale(1, 0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ziplangac"></div>
+    <script src="./bouncingLetters.js"></script>
+</body>
+
+</html>

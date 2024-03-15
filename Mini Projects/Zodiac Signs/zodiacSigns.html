@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <!--https://fatihhayrioglu.com/css3-text-ozellikleri/#:~:text=text%2Dstroke,-CSS3%20ile%20birlikte&text=CSS3%20ile%20birlikte%20metinlerin%20etraf%C4%B1na,Safari%2C%20Chrome)%20deste%C4%9Fi%20mevcut.&text=Tan%C4%B1m%20yaparken%20ilk%20olarak%20yaz%C4%B1,sonrada%20d%C4%B1%C5%9F%20hat%20%C3%A7izgisini%20tan%C4%B1mlar%C4%B1z.-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background-color: rgb(9, 11, 27);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-item {
+            padding: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 8rem;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, .5);
+            /*
+                CSS3 ile birlikte text-outline olarak standartlara giren bu özellik daha sonra standartlardan çıkarıldı, ancak webkit tabanlı tarayıcıların -webkit-text-stroke olarak desteklemektedir.
+
+                CSS3 ile birlikte metinlerin etrafına dış çizgisi çizmemize olanak sağlıyor. Şu an sadece webkit tabanlı tarayıcıların(Safari, Chrome) desteği mevcut.
+
+                Tanım yaparken ilk olarak yazı tipinin rengini yaparız, sonrada dış hat çizgisini tanımlarız.
+
+                text-stroke tanımının ilk değeri dış çizgisinin kalınlığını ikinci tanım rengini belirler.
+            */
+        }
+
+        .list-item span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .list-item span::before {
+            border-right: 8px solid;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            display: block;
+            content: attr(data-name);
+            position: absolute;
+            overflow: hidden;
+            transition: all .8s linear;
+        }
+
+
+
+        .list-item:hover span::before {
+            width: 100%;
+        }
+
+        .list-item:nth-child(1) span::before {
+            border-right-color: rgb(0, 132, 255);
+            color: rgb(0, 132, 255);
+            text-shadow: 0 0 10px rgb(0, 132, 255), 0 0 20px rgba(0, 132, 255, .5);
+        }
+
+        .list-item:nth-child(2) span::before {
+            border-right-color: rgb(204, 12, 12);
+            color: rgb(204, 12, 12);
+            text-shadow: 0 0 10px rgb(204, 12, 12), 0 0 20px rgba(204, 12, 12, .5);
+        }
+
+        .list-item:nth-child(3) span::before {
+            border-right-color: rgb(255, 251, 0);
+            color: rgb(255, 251, 0);
+            text-shadow: 0 0 10px rgb(255, 251, 0), 0 0 20px rgba(255, 251, 0, .5);
+        }
+
+        .list-item:nth-child(4) span::before {
+            border-right-color: rgb(30, 255, 0);
+            color: rgb(30, 255, 0);
+            text-shadow: 0 0 10px rgb(30, 255, 0), 0 0 20px rgba(30, 255, 0, .5);
+        }
+
+        .list-item:nth-child(5) span::before {
+            border-right-color: rgb(132, 0, 255);
+            color: rgb(132, 0, 255);
+            text-shadow: 0 0 10px rgb(132, 0, 255), 0 0 20px rgba(132, 0, 255, .5);
+        }
+
+        .list-item:nth-child(6) span::before {
+            border-right-color: rgb(255, 136, 0);
+            color: rgb(255, 136, 0);
+            text-shadow: 0 0 10px rgb(255, 136, 0), 0 0 20px rgba(255, 136, 0, .5);
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li class="list-item"><span data-name="&nbsp;KOÇ">&nbsp;KOÇ&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;BOĞA">&nbsp;BOĞA&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;İKİZLER">&nbsp;İKİZLER&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;YENGEÇ">&nbsp;YENGEÇ&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;ASLAN">&nbsp;ASLAN&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;BAŞAK">&nbsp;BAŞAK&nbsp;</span></li>
+    </ul>
+    <ul class="list">
+        <li class="list-item"><span data-name="&nbsp;TERAZİ">&nbsp;TERAZİ&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;AKREP">&nbsp;AKREP&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;YAY">&nbsp;YAY&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;OĞLAK">&nbsp;OĞLAK&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;KOVA">&nbsp;KOVA&nbsp;</span></li>
+        <li class="list-item"><span data-name="&nbsp;BALIK">&nbsp;BALIK&nbsp;</span></li>
+    </ul>
+    <!--https://kodsozluk.com/mehmeterim/html-and-nbsp-bosluk-birakma-etiketi-nasil-kullanilir-->
+    <!--örnek
+        Bugün hava çok güzel ve bir şeyler &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; yapasım var.
+    -->
+    <!--ÇIKTI
+        Bugün hava çok güzel ve bir şeyler      yapasım var.
+    -->
+</body>
+
+</html>
